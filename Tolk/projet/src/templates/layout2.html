@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"> 
+  
+<head>
+  <title>My Flask website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Add the following line to style your pages with your own CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style3.css') }}"/>
+
+</head>
+
+<body>
+
+
+<div class="bg-light">
+  <div class="container">
+      <div class="row justify justify-content-center">
+          <div class="col-11 col-md-8 col-lg-6 col-xl-5">
+              <form action="{{ url_for('predict')}}"method="POST" class="" >
+                  <div class="card bg-dark">
+                      <div class="row mt-0">
+                          <div class="col-md-12 ">
+                              <h4 class="">Entrez votre question</h4>
+                          </div>
+                      </div>
+                      <div class="form-group row mb-3">
+                          <div class="col-md-12 mb-0">
+                               <input id="e-mail" type="text" value="{{ request.form['phrase']}}" name="phrase" class="form-control input-box rm-border">
+                          </div>
+                      </div>
+                      <div class="form-group row justify-content-center mb-0">
+                          <div class="col-md-12 px-3"> <input type="submit" value="Classifier" class="btn btn-block btn-purple rm-border"> </div>
+                      </div>
+                      <br>
+                      <div class="col-md-12 mb-0">
+                       <center>
+                        <h4> Catégorie</h4>
+                        {{ prediction_text}}
+                       </center>
+                      </div>
+                    </br>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Welcome to the app to predict the quality of your wine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div>
+    <h1>Here you will be able to predict the quality of your wine if you provide the following input.</h1>
+    <p>Your input to provide to the /predict endpoint with the POST method should be formatted with the following information</p>
+
+    <p>Input will be JSON data with the template:
+      <br>{wine : [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11]} with the following parameters in order:
+      <br>x1  : fixed acidity
+      <br>x2  : volatile acidity
+      <br>x3  : citric acid
+      <br>x4  : residual sugar
+      <br>x5  : chlorides
+      <br>x6  : free sulfur dioxide
+      <br>x7  : total sulfur dioxide
+      <br>x8  : density
+      <br>x9  : pH
+      <br>x10 : sulfates
+      <br>x11 : alcohol
+      <br> Multiple arrays can be provided, separated by a comma (e.g: [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11])
+    </p>
+
+    <p>The expected output will be with the following format: 
+      <br>{'prediction': [y1]}
+      <br>y1 being the prediction result. There will be as many predictions as arrays provided as input
+    </p>
+
+    <p>To test the end point you can either
+      <br> - Use the Test_Endpoint notebook provided in the github repository, the default url is set to run the app locally, replace with "http://wine-app-mcheraki.herokuapp.com/predict" to test the API.      
+      <br> - Use curl with the following command :"curl -i -H "Content-Type: application/json" -X POST -d '{"input": [[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11]]}' http://wine-app-mcheraki.herokuapp.com/predict"
+    </p>
+  </div>
+</body>
+
+</html>

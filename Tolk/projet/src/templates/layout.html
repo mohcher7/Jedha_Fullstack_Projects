@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
+  
+<head>
+  <title>My Flask website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Add the following line to style your pages with your own CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style_2.css') }}"/>
+
+</head>
+
+<body>
+  <div>
+    
+    <center>
+    <h1>Prédire la catégorie de votre question</h1>
+    </center>
+
+    <!-- Main input for receiving query to our ML -->
+
+  <form action="{{ url_for('predict')}}"method="POST">
+    <h4> Entrez votre question</h4>
+    <input type="text" name="phrase" value="{{ request.form['phrase']}}" />
+    <button type="submit" class="btn">Classifier</button>
+    <br>
+    <br>
+    <h4> Catégorie</h4>
+    {{ prediction_text}}
+  </form>
+  <br>
+  <br>
+ 
+  </div>
+</body>
+
+</html>
