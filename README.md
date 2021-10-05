@@ -1,6 +1,5 @@
 - Conversion rate:
-Mostly followed the provided template, improved the logistic regression. Decision trees and randoms forests are left to explore.
-Left to do is fixing the error on the unlabelled part.
+Mostly followed the provided template, improved the logistic regression. Decision tree, random forest and SVM left to explore
 
 - Kayak
 Methodology has been requesting API for the cities weather information, then picked a random from the top 5 and scapped the hotels.
